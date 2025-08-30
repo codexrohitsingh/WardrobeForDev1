@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex items-center gap-4 ">
-        {/* <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" /> */}
+        <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         <button 
           onClick={() => router.push('/wishlist')} 
           className="flex items-center gap-2 hover:text-gray-900 transition"
@@ -64,22 +64,23 @@ const Navbar = () => {
         </button> */}
       </ul>
 
-      <div className="flex items-center md:hidden gap-3 ">
+      <div className="flex items-center md:hidden gap-3">
         {/* {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>} */}
-           <div className="p-6 border-t">
+         
+          <div className=" p-6 border-t">
             <button 
               onClick={() => {router.push('/wishlist'); setMobileMenuOpen(false);}} 
-              className="flex items-center gap-3 font-medium text-lg hover:text-gray-900 transition mb-2 mr-4"
+              className="items-center gap-3 font-medium text-lg hover:text-gray-900 transition mb-4 mr-4"
             >
               <Image className="w-5" src={assets.heart_icon} alt="wishlist" />
-              
+
             </button>
             <button 
               onClick={() => {router.push('/cart'); setMobileMenuOpen(false);}} 
-              className=" items-center gap-3 font-medium text-lg hover:text-gray-900 transition mb-2 relative"
+              className=" items-center gap-3 font-medium text-lg hover:text-gray-900 transition mb-4 relative"
             >
               <Image className="w-5" src={assets.cart_icon} alt="cart icon" />
-            
+
               {getCartCount() > 0 && (
                 <span className="absolute top-0 left-3 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {getCartCount()}

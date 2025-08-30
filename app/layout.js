@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Wardrobe9to5",
-    description: "Shop the latest trends at Wardrobe9to5, an e-commerce platform built with email->rs21rohit@gmail.com ",
+    description: "Shop the latest trends at Wardrobe9to5, built by Rohit singh email at ->rs21rohit@gmail.com ",
     image: "/images/twitter-image.jpg",
     creator: "@YourTwitterHandle",
   },

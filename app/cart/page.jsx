@@ -63,7 +63,10 @@ const Cart = () => {
               <tbody>
                 {Object.keys(cartItems).map((itemId) => {
                    product = products.find(product => product._id === itemId);
-                   concat = concat + product.name + " "
+                   {isCartItemSelected(itemId) && (
+                        concat = concat + product.name + " "
+                            
+                            )}
 
                   if (!product || cartItems[itemId] <= 0) return null;
 
@@ -105,7 +108,9 @@ const Cart = () => {
                               className="absolute inset-0 m-auto"
                             />
                           )}
+
                         </button>
+                          
                       </td>
                       
                       <td className="flex items-start sm:items-center gap-4 py-2 sm:py-4 md:px-4 px-2">

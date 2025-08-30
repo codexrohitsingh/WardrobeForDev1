@@ -25,6 +25,8 @@ const Cart = () => {
   const total = useMemo(() => {
     return getSelectedCartAmount();
   }, [selectedCartItems, cartItems, products, getSelectedCartAmount]);
+  let product;
+  let concat = " "
 
   return (
     <>
@@ -60,7 +62,8 @@ const Cart = () => {
               </thead>
               <tbody>
                 {Object.keys(cartItems).map((itemId) => {
-                  const product = products.find(product => product._id === itemId);
+                   product = products.find(product => product._id === itemId);
+                   concat = concat + product.name + " "
 
                   if (!product || cartItems[itemId] <= 0) return null;
 
@@ -209,7 +212,7 @@ const Cart = () => {
             </div>
             <button className="bg-orange-600 hover:bg-orange-700 transition text-white w-full py-2 sm:py-3 font-medium rounded mt-4 sm:mt-6 text-sm sm:text-base" onClick={()=>{
                const phoneNumber = '7903148225'; 
-        const message = 'Hello, I want to know more about your services.'; 
+        const message = 'Hello, i want to purchase the product named as ' +`${concat}` +" and the total price is " +`${total}`; 
 
 
         const encodedMessage = encodeURIComponent(message);

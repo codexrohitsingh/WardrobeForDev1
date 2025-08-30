@@ -8,14 +8,14 @@ const outfit = Outfit({ subsets: ['latin'], weight: ["300", "400", "500"] });
 
 export const metadata = {
   title: "Wardrobe9to5",
-  description: "Fashion E-Commerce with Next.js",
+  description: "Fashion E-Commerce with Rohit Singh gamil-> rs21rohit@gmail.com",
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   author: "Your Company Name", 
   keywords: "fashion, e-commerce, clothing, online store, next.js, wardrobe",
   og: {
     title: "Wardrobe9to5",
-    description: "Discover stylish fashion and top clothing picks at Wardrobe9to5, powered by Next.js.",
+    description: "Discover stylish fashion and top clothing picks at Wardrobe9to5, powered by rs21rohit@gmail.com",
     url: "https://www.wardrobe9to5.com", 
     type: "website",
     image: "/images/og-image.jpg", 

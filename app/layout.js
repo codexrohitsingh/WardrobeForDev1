@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
               "@type": "WebSite",
               "name": "Wardrobe9to5",
               "url": "https://www.wardrobe9to5.com",
-              "description": "Fashion E-Commerce with Next.js",
+              "description": "Fashion E-Commerce with email-> rs21rohit@gmail.com",
               "publisher": {
                 "@type": "Organization",
                 "name": "Wardrobe9to5"

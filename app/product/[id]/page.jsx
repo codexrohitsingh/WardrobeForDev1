@@ -123,7 +123,7 @@ const Product = () => {
                     <div className="flex flex-col sm:flex-row items-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4">
                         <button 
                             onClick={() => toggleWishlist(productData._id)} 
-                            className={`flex items-center justify-center w-12 py-3 sm:py-3.5 text-sm sm:text-base ${isInWishlist(productData._id) ? 'bg-red-100 text-red-500' : 'bg-gray-100 text-gray-800/80'} hover:bg-gray-200 transition rounded`}
+                            className={`flex items-center justify-center w-12 py-3 sm:py-3.5 text-sm sm:text-base ${isInWishlist(productData._id) ? 'bg-red-100 text-red-500' : ' text-gray-800/80'} hover:bg-gray-200 transition rounded`}
                         >
                             <Image 
                                 src={isInWishlist(productData._id) ? assets.heart_filled_icon : assets.heart_icon} 

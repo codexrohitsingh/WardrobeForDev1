@@ -216,7 +216,7 @@ const Cart = () => {
               <p>₹{total.toFixed(2)}</p>
             </div>
             <button className="bg-orange-600 hover:bg-orange-700 transition text-white w-full py-2 sm:py-3 font-medium rounded mt-4 sm:mt-6 text-sm sm:text-base" onClick={()=>{
-               const phoneNumber = '7903148225'; 
+               const phoneNumber = '7319959269'; 
         const message = 'Hello, i want to purchase the product named as ' +`${concat}` +" and the total price is " +`${total}`; 
 
 

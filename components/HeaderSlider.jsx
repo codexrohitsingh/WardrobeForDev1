@@ -57,15 +57,15 @@ const HeaderSlider = () => {
             className="flex flex-col-reverse md:flex-row items-center justify-between bg-gradient-to-br from-[#E6E9F2] to-[#F0F2F8] py-6 sm:py-8 md:px-14 px-4 sm:px-5 mt-4 sm:mt-6 rounded-xl min-w-full"
           >
             <div className="md:pl-8 mt-6 sm:mt-10 md:mt-0 text-center md:text-left">
-              <p className="text-sm sm:text-base text-orange-600 pb-1 font-medium">{slide.offer}</p>
+              <p className="text-sm sm:text-base text-gray-700 pb-1 font-medium">{slide.offer}</p>
               <h1 className="max-w-lg md:text-[40px] md:leading-[48px] text-xl sm:text-2xl lg:text-3xl font-semibold px-2 md:px-0">
                 {slide.title}
               </h1>
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 mt-4 md:mt-6">
-                <button className="w-full sm:w-auto md:px-10 px-8 sm:px-7 md:py-2.5 py-2.5 bg-orange-600 hover:bg-orange-700 transition-colors rounded-full text-white font-medium text-sm sm:text-base">
+                <button className="w-full sm:w-auto md:px-10 px-8 sm:px-7 md:py-2.5 py-2.5 bg-black hover:bg-gray-800 transition-colors rounded-full text-white font-medium text-sm sm:text-base">
                   {slide.buttonText1}
                 </button>
-                <button className="group flex items-center justify-center gap-2 px-6 py-2.5 font-medium text-sm sm:text-base hover:text-orange-600 transition-colors">
+                <button className="group flex items-center justify-center gap-2 px-6 py-2.5 font-medium text-sm sm:text-base hover:text-gray-900 transition-colors">
                   {slide.buttonText2}
                   <Image className="group-hover:translate-x-1 transition w-4 h-4" src={assets.arrow_icon} alt="arrow_icon" />
                 </button>
@@ -88,7 +88,7 @@ const HeaderSlider = () => {
             key={index}
             onClick={() => handleSlideChange(index)}
             className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full cursor-pointer transition-all duration-300 ${
-              currentSlide === index ? "bg-orange-600 w-6 sm:w-8" : "bg-gray-400/40 hover:bg-gray-400/60"
+              currentSlide === index ? "bg-gray-900 w-6 sm:w-8" : "bg-gray-400/40 hover:bg-gray-400/60"
             }`}
           ></div>
         ))}

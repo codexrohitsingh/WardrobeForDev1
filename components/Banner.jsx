@@ -17,7 +17,7 @@ const Banner = () => {
         <p className="max-w-[343px] text-sm sm:text-base font-medium text-gray-800/60">
           From business professional to casual chic—everything you need for any occasion
         </p>
-        <button className="group flex items-center justify-center gap-1 px-8 sm:px-12 py-2 sm:py-2.5 bg-orange-600 rounded text-white text-sm sm:text-base">
+        <button className="group flex items-center justify-center gap-1 px-8 sm:px-12 py-2 sm:py-2.5 bg-black hover:bg-gray-800 rounded text-white text-sm sm:text-base transition">
           Shop now
           <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon_white} alt="arrow_icon_white" />
         </button>

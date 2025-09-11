@@ -1,6 +1,7 @@
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const products = [
   {
@@ -8,48 +9,116 @@ const products = [
     image: assets.wardrobe_image1,
     title: "Professional Style",
     description: "Classic business suits for the modern professional.",
+    price: "2499",
   },
   {
     id: 2,
     image: assets.wardrobe_image2,
     title: "Elegant Evening",
     description: "Stunning evening wear for special occasions.",
+    price: "2299",
   },
   {
     id: 3,
     image: assets.wardrobe_image4,
     title: "Smart Casual",
     description: "Versatile wardrobe essentials for everyday elegance.",
+    price: "1799",
   },
 ];
 
 const FeaturedProduct = () => {
+  const router = useRouter();
+  
   return (
-    <div className="mt-8 sm:mt-10 md:mt-14">
-      <div className="flex flex-col items-center px-3 sm:px-0">
-        <p className="text-2xl md:text-3xl font-medium">Featured Products</p>
-        <div className="w-28 h-0.5 bg-orange-600 mt-2"></div>
+    <div className="mt-16 sm:mt-20 md:mt-24 px-4 sm:px-6 md:px-16 lg:px-32">
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-2">Featured Collection</h2>
+        <p className="text-sm font-light text-gray-600">Curated pieces for the modern professional</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-14 mt-6 sm:mt-8 md:mt-12 md:px-14 px-4">
-        {products.map(({ id, image, title, description }) => (
-          <div key={id} className="relative group">
-            <Image
-              src={image}
-              alt={title}
-              className="group-hover:brightness-75 transition duration-300 w-full h-auto object-cover"
-            />
-            <div className="group-hover:-translate-y-4 transition duration-300 absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 sm:left-6 md:left-8 text-white space-y-1 sm:space-y-2">
-              <p className="font-medium text-lg sm:text-xl lg:text-2xl">{title}</p>
-              <p className="text-xs sm:text-sm lg:text-base leading-4 sm:leading-5 max-w-48 sm:max-w-60">
-                {description}
-              </p>
-              <button className="flex items-center gap-1.5 bg-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded text-sm sm:text-base">
-                Buy now <Image className="h-3 w-3" src={assets.redirect_icon} alt="Redirect Icon" />
-              </button>
+      {/* Featured Products Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {products.map(({ id, image, title, description, price }) => (
+          <div key={id} className="group cursor-pointer" onClick={() => router.push('/all-products')}>
+            {/* Image Container */}
+            <div className="relative aspect-[3/4] overflow-hidden bg-gray-50 mb-4">
+              <Image
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                fill
+              />
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500" />
+              
+              {/* Quick Shop Button - Appears on Hover */}
+              <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <button className="w-full py-4 bg-white/95 backdrop-blur text-sm font-light text-gray-900 hover:bg-white transition">
+                  Quick Shop
+                </button>
+              </div>
+            </div>
+            
+            {/* Product Info */}
+            <div className="space-y-2">
+              <h3 className="text-lg font-light text-gray-900">{title}</h3>
+              <p className="text-xs font-light text-gray-600 line-clamp-2">{description}</p>
+              <p className="text-base font-light text-gray-900">₹{price}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Banner Section */}
+      <div className="mt-20 relative overflow-hidden rounded-lg bg-gradient-to-r from-gray-50 to-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+          {/* Left Content */}
+          <div className="p-8 md:p-12 lg:p-16">
+            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
+              Elevate Your<br />Wardrobe Style
+            </h2>
+            <p className="text-sm font-light text-gray-600 mb-6 max-w-sm">
+              From business professional to casual chic—everything you need for any occasion
+            </p>
+            <button 
+              onClick={() => router.push('/all-products')}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-sm font-light hover:bg-gray-800 transition"
+            >
+              Shop now
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Right Images */}
+          <div className="relative h-64 md:h-96">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-full h-full">
+                {/* First Image */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-48 md:w-48 md:h-56">
+                  <Image
+                    src={assets.wardrobe_image5}
+                    alt="Professional wear"
+                    className="object-cover rounded-lg shadow-lg"
+                    fill
+                  />
+                </div>
+                {/* Second Image */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-40 h-48 md:w-48 md:h-56">
+                  <Image
+                    src={assets.wardrobe_image7}
+                    alt="Formal wear"
+                    className="object-cover rounded-lg shadow-lg"
+                    fill
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

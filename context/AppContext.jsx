@@ -2,6 +2,7 @@
 import { productsDummyData, userDummyData } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export const AppContext = createContext();
 
@@ -13,6 +14,7 @@ export const AppContextProvider = (props) => {
 
     const currency = process.env.NEXT_PUBLIC_CURRENCY
     const router = useRouter()
+    const { data: session, status } = useSession()
 
     const [products, setProducts] = useState([])
     const [userData, setUserData] = useState(false)
@@ -20,6 +22,7 @@ export const AppContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({})
     const [selectedCartItems, setSelectedCartItems] = useState({})
     const [wishlistItems, setWishlistItems] = useState({})
+    const [isHydrated, setIsHydrated] = useState(false)
 
     const fetchProductData = async () => {
         setProducts(productsDummyData)
@@ -39,11 +42,14 @@ export const AppContextProvider = (props) => {
             cartData[itemId] = 1;
         }
         setCartItems(cartData);
+        // Save to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartData));
 
         // Also select the item by default when adding to cart
         let selectedData = structuredClone(selectedCartItems);
         selectedData[itemId] = true;
         setSelectedCartItems(selectedData);
+        localStorage.setItem('selectedCartItems', JSON.stringify(selectedData));
     }
 
     const updateCartQuantity = async (itemId, quantity) => {
@@ -56,10 +62,13 @@ export const AppContextProvider = (props) => {
             let selectedData = structuredClone(selectedCartItems);
             delete selectedData[itemId];
             setSelectedCartItems(selectedData);
+            localStorage.setItem('selectedCartItems', JSON.stringify(selectedData));
         } else {
             cartData[itemId] = quantity;
         }
         setCartItems(cartData)
+        // Save to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartData));
 
     }
 
@@ -102,6 +111,8 @@ export const AppContextProvider = (props) => {
         let selectedData = structuredClone(selectedCartItems);
         selectedData[itemId] = !selectedData[itemId];
         setSelectedCartItems(selectedData);
+        // Save to localStorage
+        localStorage.setItem('selectedCartItems', JSON.stringify(selectedData));
     }
     
     const isCartItemSelected = (itemId) => {
@@ -116,19 +127,70 @@ export const AppContextProvider = (props) => {
             wishlistData[itemId] = true;
         }
         setWishlistItems(wishlistData);
+        // Save to localStorage
+        localStorage.setItem('wishlistItems', JSON.stringify(wishlistData));
     }
     
     const isInWishlist = (itemId) => {
         return wishlistItems[itemId] ? true : false;
     }
 
+    // Load data from localStorage on mount
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // Load cart items from localStorage
+            const savedCartItems = localStorage.getItem('cartItems');
+            if (savedCartItems) {
+                try {
+                    setCartItems(JSON.parse(savedCartItems));
+                } catch (e) {
+                    console.error('Error loading cart items:', e);
+                }
+            }
+
+            // Load selected cart items from localStorage
+            const savedSelectedCartItems = localStorage.getItem('selectedCartItems');
+            if (savedSelectedCartItems) {
+                try {
+                    setSelectedCartItems(JSON.parse(savedSelectedCartItems));
+                } catch (e) {
+                    console.error('Error loading selected cart items:', e);
+                }
+            }
+
+            // Load wishlist items from localStorage
+            const savedWishlistItems = localStorage.getItem('wishlistItems');
+            if (savedWishlistItems) {
+                try {
+                    setWishlistItems(JSON.parse(savedWishlistItems));
+                } catch (e) {
+                    console.error('Error loading wishlist items:', e);
+                }
+            }
+            
+            setIsHydrated(true);
+        }
+    }, []);
+
     useEffect(() => {
         fetchProductData()
     }, [])
-
+    
     useEffect(() => {
-        fetchUserData()
-    }, [])
+        // Use session data if available, otherwise fetch user data
+        if (session && session.user) {
+            setUserData({
+                _id: session.user.id || "user_id",
+                name: session.user.name || "User",
+                email: session.user.email || "user@example.com",
+                imageUrl: session.user.image || "",
+                cartItems: {}
+            });
+        } else {
+            // Fallback to dummy data when not logged in
+            fetchUserData();
+        }
+    }, [session])
 
     const value = {
         currency, router,
@@ -141,7 +203,9 @@ export const AppContextProvider = (props) => {
         getCartCount, getCartAmount, getSelectedCartAmount,
         toggleCartItemSelection, isCartItemSelected,
         wishlistItems, setWishlistItems,
-        toggleWishlist, isInWishlist
+        toggleWishlist, isInWishlist,
+        session, status, signIn, signOut,
+        isHydrated
     }
 
     return (

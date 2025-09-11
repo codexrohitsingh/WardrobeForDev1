@@ -35,7 +35,7 @@ const Cart = () => {
         <div className="flex-1">
           <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-gray-500/30 pb-4 md:pb-6">
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-500">
-              Your <span className="font-medium text-orange-600">Cart</span>
+              Your <span className="font-medium text-gray-900">Cart</span>
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-500/80">{getCartCount()} Items</p>
           </div>
@@ -115,20 +115,20 @@ const Cart = () => {
                       
                       <td className="flex items-start sm:items-center gap-4 py-2 sm:py-4 md:px-4 px-2">
                         <div className="flex-shrink-0">
-                          <div className="rounded-lg overflow-hidden bg-gray-500/10 p-2">
+                          <div className="rounded-lg overflow-hidden bg-gray-50">
                             <Image
-                              src={product.image}
+                              src={Array.isArray(product.image) ? product.image[0] : product.image}
                               alt={product.name}
-                              className="w-16 sm:w-16 h-auto object-cover mix-blend-multiply"
-                              width={1280}
-                              height={720}
+                              className="w-20 h-24 sm:w-24 sm:h-28 object-cover"
+                              width={96}
+                              height={112}
                             />
                           </div>
                         </div>
                         <div className="text-sm hidden sm:block">
                           <p className="text-gray-800">{product.name}</p>
                           <button
-                            className="text-xs text-orange-600 mt-1"
+                            className="text-xs text-gray-600 mt-1"
                             onClick={() => updateCartQuantity(product._id, 0)}
                           >
                             Remove
@@ -173,7 +173,7 @@ const Cart = () => {
                       {/* Mobile remove button - only shows on small screens */}
                       <td className="sm:hidden py-2 text-right">
                         <button
-                          className="text-xs text-orange-600"
+                          className="text-xs text-gray-600"
                           onClick={() => updateCartQuantity(product._id, 0)}
                         >
                           Remove
@@ -185,7 +185,7 @@ const Cart = () => {
               </tbody>
             </table>
           </div>
-          <button onClick={()=> router.push('/all-products')} className="group flex items-center mt-4 sm:mt-6 gap-2 text-orange-600 text-sm sm:text-base">
+          <button onClick={()=> router.push('/all-products')} className="group flex items-center mt-4 sm:mt-6 gap-2 text-gray-900 text-sm sm:text-base">
             <Image
               className="group-hover:-translate-x-1 transition w-4 sm:w-auto h-auto"
               src={assets.arrow_right_icon_colored}
@@ -215,7 +215,7 @@ const Cart = () => {
               <p>Total</p>
               <p>₹{total.toFixed(2)}</p>
             </div>
-            <button className="bg-orange-600 hover:bg-orange-700 transition text-white w-full py-2 sm:py-3 font-medium rounded mt-4 sm:mt-6 text-sm sm:text-base" onClick={()=>{
+            <button className="bg-black hover:bg-gray-800 transition text-white w-full py-2 sm:py-3 font-medium rounded mt-4 sm:mt-6 text-sm sm:text-base" onClick={()=>{
                const phoneNumber = '7319959269'; 
         const message = 'Hello, i want to purchase the product named as ' +`${concat}` +" and the total price is " +`${total}`; 
 
@@ -232,8 +232,8 @@ const Cart = () => {
           <form className="mb-6 md:mb-0">
             <p className="text-base sm:text-lg mb-2">Have a coupon?</p>
             <div className="flex gap-2 sm:gap-3">
-              <input className="flex-1 border border-gray-500/50 rounded p-2 text-sm sm:text-base focus:outline-orange-600 placeholder:text-xs sm:placeholder:text-sm" placeholder="Coupon Code" />
-              <button className="border border-gray-500/50 hover:border-orange-600 hover:text-orange-600 transition rounded p-2 px-4 sm:px-6 text-sm sm:text-base">Apply</button>
+              <input className="flex-1 border border-gray-500/50 rounded p-2 text-sm sm:text-base focus:outline-gray-900 placeholder:text-xs sm:placeholder:text-sm" placeholder="Coupon Code" />
+              <button className="border border-gray-500/50 hover:border-gray-900 hover:text-gray-900 transition rounded p-2 px-4 sm:px-6 text-sm sm:text-base">Apply</button>
             </div>
           </form>
         </div>

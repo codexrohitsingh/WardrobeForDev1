@@ -162,6 +162,12 @@ export const HomeIcon = () => (
   </svg>
 );
 
+// Import user photos - these will be the actual user photos when available
+// For now using wardrobe images as placeholders
+const userPhoto1 = wardrobe_image1; // Blue dress photo
+const userPhoto2 = wardrobe_image2; // White outfit photo  
+const userPhoto3 = wardrobe_image3; // Black outfit photo
+
 export const productsDummyData = [
   {
     "_id": "wardrobe_001",
@@ -170,7 +176,7 @@ export const productsDummyData = [
     "description": "Professional navy blue business suit perfect for office meetings and formal events. Made from premium wool blend fabric with excellent fit and comfort. Includes both jacket and trousers.",
     "price": 2499,
     "offerPrice": 2199,
-    "image": wardrobe_image1,
+    "image": [wardrobe_image1, userPhoto1, userPhoto2, userPhoto3],
     "category": "Formal Wear",
     "date": Date.now(),
     "__v": 0
@@ -182,7 +188,7 @@ export const productsDummyData = [
     "description": "Stunning black evening dress suitable for cocktail parties and formal dinners. Features a flattering silhouette with quality fabric and elegant design details.",
     "price": 2299,
     "offerPrice": 1999,
-    "image": wardrobe_image2,
+    "image": [wardrobe_image2, wardrobe_image5, wardrobe_image7, wardrobe_image10],
     "category": "Evening Wear",
     "date": Date.now(),
     "__v": 0
@@ -194,7 +200,7 @@ export const productsDummyData = [
     "description": "Versatile grey blazer that pairs perfectly with both formal trousers and casual jeans. Ideal for smart-casual office environments and social events.",
     "price": 1999,
     "offerPrice": 1799,
-    "image": wardrobe_image3,
+    "image": [wardrobe_image3, userPhoto1, userPhoto2, userPhoto3],
     "category": "Smart Casual",
     "date": Date.now(),
     "__v": 0
@@ -206,7 +212,7 @@ export const productsDummyData = [
     "description": "Premium white dress shirt made from 100% cotton. Wrinkle-resistant fabric ensures you look sharp throughout your workday. Available in various fits.",
     "price": 1699,
     "offerPrice": 1599,
-    "image": wardrobe_image4,
+    "image": [wardrobe_image4, wardrobe_image10, wardrobe_image1, wardrobe_image6],
     "category": "Shirts",
     "date": Date.now(),
     "__v": 0
@@ -218,7 +224,7 @@ export const productsDummyData = [
     "description": "Professional pencil skirt in charcoal grey, perfect for the modern working woman. Features a comfortable fit with stretch fabric for all-day wear.",
     "price": 1899,
     "offerPrice": 1749,
-    "image": wardrobe_image5,
+    "image": [wardrobe_image5, wardrobe_image8, wardrobe_image2, wardrobe_image11],
     "category": "Skirts",
     "date": Date.now(),
     "__v": 0
@@ -230,7 +236,7 @@ export const productsDummyData = [
     "description": "Premium silk tie collection featuring classic patterns perfect for business attire. Set includes matching pocket square and cufflinks.",
     "price": 1799,
     "offerPrice": 1599,
-    "image": wardrobe_image6,
+    "image": [wardrobe_image6, wardrobe_image1, wardrobe_image9, wardrobe_image3],
     "category": "Accessories",
     "date": Date.now(),
     "__v": 0
@@ -242,7 +248,7 @@ export const productsDummyData = [
     "description": "Sophisticated burgundy dress suitable for office wear and business meetings. Features a modest length and professional cut with comfortable fabric.",
     "price": 2199,
     "offerPrice": 1999,
-    "image": wardrobe_image7,
+    "image": [wardrobe_image7, wardrobe_image2, wardrobe_image10, wardrobe_image5],
     "category": "Dresses",
     "date": Date.now(),
     "__v": 0
@@ -254,7 +260,7 @@ export const productsDummyData = [
     "description": "Classic black tailored trousers perfect for any professional wardrobe. Made from high-quality fabric with excellent durability and comfort.",
     "price": 2099,
     "offerPrice": 1899,
-    "image": wardrobe_image8,
+    "image": [wardrobe_image8, wardrobe_image11, wardrobe_image3, wardrobe_image5],
     "category": "Trousers",
     "date": Date.now(),
     "__v": 0
@@ -266,7 +272,7 @@ export const productsDummyData = [
     "description": "Stylish navy vest that complements any business suit. Perfect for adding an extra layer of sophistication to your professional attire.",
     "price": 1899,
     "offerPrice": 1699,
-    "image": wardrobe_image9,
+    "image": [wardrobe_image9, wardrobe_image1, wardrobe_image6, wardrobe_image3],
     "category": "Formal Wear",
     "date": Date.now(),
     "__v": 0
@@ -278,7 +284,7 @@ export const productsDummyData = [
     "description": "Elegant cream blouse perfect for office wear. Features a classic design with modern comfort, suitable for pairing with skirts or trousers.",
     "price": 1799,
     "offerPrice": 1649,
-    "image": wardrobe_image10,
+    "image": [wardrobe_image10, wardrobe_image4, wardrobe_image7, wardrobe_image2],
     "category": "Blouses",
     "date": Date.now(),
     "__v": 0
@@ -290,7 +296,7 @@ export const productsDummyData = [
     "description": "Versatile khaki chinos perfect for business casual environments. Comfortable stretch fabric ensures all-day comfort while maintaining a professional appearance.",
     "price": 1999,
     "offerPrice": 1799,
-    "image": wardrobe_image11,
+    "image": [wardrobe_image11, wardrobe_image8, wardrobe_image3, wardrobe_image5],
     "category": "Casual Wear",
     "date": Date.now(),
     "__v": 0

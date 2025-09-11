@@ -31,7 +31,7 @@ const FeaturedProduct = () => {
   const router = useRouter();
   
   return (
-    <div className="mt-16 sm:mt-20 md:mt-24 px-4 sm:px-6 md:px-16 lg:px-32 border-t border-gray-200 pt-16">
+    <div className="mt-16 sm:mt-20 md:mt-24 px-6 sm:px-8 md:px-16 lg:px-32 border-t border-gray-200 pt-16">
       {/* Section Header */}
       <div className="text-center mb-12 sm:mb-16">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-800 mb-3">Curated Selection</h2>
@@ -39,11 +39,11 @@ const FeaturedProduct = () => {
       </div>
 
       {/* Featured Products Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14 lg:gap-16 xl:gap-20 w-full">
+      <div className="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full">
         {products.map(({ id, image, title, description, price }) => (
           <div key={id} className="group cursor-pointer" onClick={() => router.push('/all-products')}>
             {/* Image Container */}
-            <div className="relative aspect-[3/4] min-h-[450px] sm:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-white mb-6 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+            <div className="relative aspect-[3/4] overflow-hidden bg-white mb-4 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
               <Image
                 src={image}
                 alt={title}

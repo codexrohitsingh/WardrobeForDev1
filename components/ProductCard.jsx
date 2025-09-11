@@ -13,25 +13,25 @@ const ProductCard = ({ product }) => {
     return (
         <div
             onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}
-            className="flex flex-col items-start w-full cursor-pointer group transform transition-all duration-300 hover:scale-[1.01]"
+            className="flex flex-col items-start w-full cursor-pointer group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="relative w-full aspect-[2/3] min-h-[500px] md:min-h-[550px] lg:min-h-[600px] xl:min-h-[650px] bg-gradient-to-br from-warm-brown to-dark-brown overflow-hidden mb-5 rounded-xl shadow-xl">
+            <div className="relative w-full aspect-[2/3] min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] bg-white overflow-hidden mb-6 rounded-lg border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
                 <Image 
                     src={Array.isArray(product.image) ? product.image[0] : product.image} 
                     alt={product.name}
-                    width={1000}
-                    height={1500}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    width={1200}
+                    height={1800}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     priority={true}
                     quality={90}
                 />
                 
                 {/* Wishlist Icon */}
                 <button
-                    className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white/90 hover:scale-110 transition-all duration-200 shadow-md"
+                    className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full p-2.5 hover:bg-white hover:scale-110 transition-all duration-200 shadow-md"
                     onClick={(e) => {
                         e.stopPropagation();
                         toggleWishlist(product._id);
@@ -49,9 +49,9 @@ const ProductCard = ({ product }) => {
                 </button>
 
                 {/* Quick Add to Cart - Shows on hover */}
-                <div className={`absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                <div className={`absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm transition-all duration-300 border-t border-gray-200 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
                     <button 
-                        className="w-full py-3 text-sm font-light text-gray-900 hover:bg-gray-900 hover:text-cream transition-all duration-300"
+                        className="w-full py-3 text-sm font-light text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
                         onClick={(e) => {
                             e.stopPropagation();
                             addToCart(product._id);
@@ -65,33 +65,30 @@ const ProductCard = ({ product }) => {
             </div>
             
             {/* Product Details */}
-            <div className="w-full space-y-3 px-4">
+            <div className="text-center px-3">
                 {/* Product Name */}
-                <h3 className="text-xl md:text-2xl font-light text-gray-900 line-clamp-1">
+                <h3 className="text-lg sm:text-xl font-serif text-gray-800 mb-2 tracking-wide line-clamp-1">
                     {product.name}
                 </h3>
                 
                 {/* Category */}
-                <p className="text-base md:text-lg font-light text-gray-600 line-clamp-1">
+                <p className="text-sm text-gray-500 mb-3 uppercase tracking-widest font-light">
                     {product.category || 'Formal Wear'}
                 </p>
                 
                 {/* Price */}
-                <div className="flex items-center gap-3 pt-3">
+                <div className="flex items-center justify-center gap-3">
                     {product.offerPrice && product.offerPrice < product.price ? (
                         <>
-                            <span className="text-xl md:text-2xl font-normal text-gray-900">
+                            <span className="text-lg sm:text-xl font-light text-gray-900">
                                 {currency}{product.offerPrice}
                             </span>
-                            <span className="text-sm font-light text-gray-400 line-through">
+                            <span className="text-sm text-gray-400 line-through">
                                 {currency}{product.price}
-                            </span>
-                            <span className="text-xs font-light text-gray-600">
-                                {Math.round(((product.price - product.offerPrice) / product.price) * 100)}% OFF
                             </span>
                         </>
                     ) : (
-                        <span className="text-xl md:text-2xl font-normal text-gray-900">
+                        <span className="text-lg sm:text-xl font-light text-gray-900">
                             {currency}{product.price}
                         </span>
                     )}

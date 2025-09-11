@@ -272,12 +272,39 @@ const Product = () => {
                 </div>
             </div>
 
-            {/* Related Products */}
-            <div className="mt-12 sm:mt-16 lg:mt-20">
-                <h2 className="text-base sm:text-lg font-light text-gray-600 mb-4 sm:mb-6 lg:mb-8">You might also like</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-6xl">
+            {/* Related Products - Classic Section */}
+            <div className="mt-16 sm:mt-20 lg:mt-24 border-t border-gray-200 pt-12 sm:pt-16">
+                <div className="text-center mb-10 sm:mb-12">
+                    <h2 className="text-2xl sm:text-3xl font-serif text-gray-800 mb-2">You Might Also Like</h2>
+                    <div className="w-24 h-px bg-gray-400 mx-auto"></div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-7xl mx-auto">
                     {products.slice(0, 3).map((product, index) => (
-                        <ProductCard key={index} product={product} />
+                        <div key={index} className="group cursor-pointer" onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}>
+                            <div className="relative aspect-[3/4] mb-5 overflow-hidden bg-white rounded border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow duration-500">
+                                <Image 
+                                    src={Array.isArray(product.image) ? product.image[0] : product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                />
+                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-5 transition-all duration-500"></div>
+                            </div>
+                            <div className="text-center px-2">
+                                <h3 className="text-base font-serif text-gray-800 mb-1.5 tracking-wide group-hover:text-gray-600 transition-colors">{product.name}</h3>
+                                <p className="text-xs text-gray-500 mb-3 uppercase tracking-widest font-light">{product.category || 'Formal Wear'}</p>
+                                <div className="flex items-center justify-center gap-3">
+                                    <span className="text-base font-light text-gray-900">₹{product.offerPrice || product.price}</span>
+                                    {product.offerPrice && (
+                                        <span className="text-sm text-gray-400 line-through">₹{product.price}</span>
+                                    )}
+                                </div>
+                                <button className="mt-4 text-xs text-gray-600 border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-900 transition-all duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

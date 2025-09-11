@@ -1,12 +1,12 @@
 import Google from "next-auth/providers/google";
 
 export const authConfig = {
-  providers: [
+  providers: process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-  ],
+  ] : [],
   callbacks: {
     async session({ session, token }) {
       if (token?.sub) {
@@ -26,4 +26,7 @@ export const authConfig = {
     error: '/error',
   },
   secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: 'jwt',
+  },
 };

@@ -81,6 +81,7 @@ const AboutUs = () => {
         </Link>
         </div>
       </div>
+      </div>
     <Footer />
     </>
   );

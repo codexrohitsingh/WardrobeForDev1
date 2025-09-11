@@ -78,10 +78,10 @@ const Product = () => {
                 <div className="lg:sticky lg:top-24 lg:h-fit px-0 sm:px-2 lg:px-0">
                     {/* Product Title */}
                     <div className="mb-4 sm:mb-6">
-                        <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                        <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">
                             {productData.category || 'Cotton jumper'}
                         </p>
-                        <h1 className="text-xl sm:text-2xl font-light text-gray-900 mb-1">
+                        <h1 className="text-lg sm:text-xl font-light text-gray-600 mb-1">
                             {productData.name}
                         </h1>
                         <p className="text-xs text-gray-400 uppercase">
@@ -92,7 +92,7 @@ const Product = () => {
                     {/* Price */}
                     <div className="mb-4 sm:mb-6">
                         <div className="flex items-baseline gap-3">
-                            <span className="text-xl sm:text-2xl font-light text-gray-900">
+                            <span className="text-lg sm:text-xl font-light text-gray-700">
                                 ₹{productData.offerPrice || productData.price}
                             </span>
                             {productData.offerPrice && (
@@ -106,7 +106,7 @@ const Product = () => {
 
                     {/* Color Selection (if applicable) */}
                     <div className="mb-4 sm:mb-6">
-                        <p className="text-sm font-light mb-3">Color</p>
+                        <p className="text-xs font-light text-gray-500 mb-3">Color</p>
                         <div className="flex gap-2">
                             <button className="w-8 h-8 rounded-full bg-black border-2 border-gray-900"></button>
                             <button className="w-8 h-8 rounded-full bg-gray-200 border-2 border-transparent hover:border-gray-400"></button>
@@ -116,7 +116,7 @@ const Product = () => {
                     {/* Size Selection */}
                     <div className="mb-4 sm:mb-6">
                         <div className="flex items-center justify-between mb-3">
-                            <p className="text-sm font-light">Select size</p>
+                            <p className="text-xs font-light text-gray-500">Select size</p>
                             <button 
                                 onClick={() => setShowSizeGuide(true)}
                                 className="text-xs text-gray-500 underline hover:text-gray-700"
@@ -213,7 +213,7 @@ const Product = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
-                            <div className="pb-4 text-xs text-gray-600 leading-relaxed">
+                            <div className="pb-4 text-xs text-gray-400 leading-relaxed">
                                 {productData.description || 'Premium quality product designed for comfort and style. Made with carefully selected materials to ensure durability and perfect fit.'}
                             </div>
                         </details>
@@ -225,7 +225,7 @@ const Product = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
-                            <div className="pb-4 text-xs text-gray-600 leading-relaxed">
+                            <div className="pb-4 text-xs text-gray-400 leading-relaxed">
                                 <p className="mb-2">Model is wearing size M</p>
                                 <p>Height: 175cm/5'9"</p>
                             </div>
@@ -238,7 +238,7 @@ const Product = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
-                            <div className="pb-4 text-xs text-gray-600 leading-relaxed">
+                            <div className="pb-4 text-xs text-gray-400 leading-relaxed">
                                 <p>100% Cotton</p>
                                 <p className="mt-2">Machine wash at 30°C</p>
                             </div>
@@ -251,7 +251,7 @@ const Product = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
-                            <div className="pb-4 text-xs text-gray-600">
+                            <div className="pb-4 text-xs text-gray-400">
                                 <p>Available online only</p>
                             </div>
                         </details>
@@ -259,7 +259,7 @@ const Product = () => {
 
                     {/* Reviews Dots */}
                     <div className="mt-8">
-                        <p className="text-sm font-light mb-3">Reviews</p>
+                        <p className="text-xs font-light text-gray-500 mb-3">Reviews</p>
                         <div className="flex gap-1">
                             {[...Array(5)].map((_, i) => (
                                 <div
@@ -274,9 +274,9 @@ const Product = () => {
 
             {/* Related Products */}
             <div className="mt-12 sm:mt-16 lg:mt-20">
-                <h2 className="text-lg sm:text-xl font-light mb-4 sm:mb-6 lg:mb-8">You might also like</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                    {products.slice(0, 4).map((product, index) => (
+                <h2 className="text-base sm:text-lg font-light text-gray-600 mb-4 sm:mb-6 lg:mb-8">You might also like</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-6xl">
+                    {products.slice(0, 3).map((product, index) => (
                         <ProductCard key={index} product={product} />
                     ))}
                 </div>

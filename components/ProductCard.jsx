@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="relative w-full aspect-[3/4] min-h-[450px] sm:min-h-[500px] lg:min-h-[550px] xl:min-h-[600px] bg-white overflow-hidden mb-6 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+            <div className="relative w-full aspect-[3/4] min-h-[300px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] bg-white overflow-hidden mb-4 sm:mb-6 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
                 <Image 
                     src={Array.isArray(product.image) ? product.image[0] : product.image} 
                     alt={product.name}
@@ -65,14 +65,14 @@ const ProductCard = ({ product }) => {
             </div>
             
             {/* Product Details */}
-            <div className="text-center px-3">
+            <div className="text-center px-2 sm:px-3">
                 {/* Product Name */}
-                <h3 className="text-lg sm:text-xl font-serif text-gray-800 mb-2 tracking-wide line-clamp-1">
+                <h3 className="text-base sm:text-lg md:text-xl font-serif text-gray-800 mb-1 sm:mb-2 tracking-wide line-clamp-1">
                     {product.name}
                 </h3>
                 
                 {/* Category */}
-                <p className="text-sm text-gray-500 mb-3 uppercase tracking-widest font-light">
+                <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 uppercase tracking-widest font-light">
                     {product.category || 'Formal Wear'}
                 </p>
                 
@@ -80,7 +80,7 @@ const ProductCard = ({ product }) => {
                 <div className="flex items-center justify-center gap-3">
                     {product.offerPrice && product.offerPrice < product.price ? (
                         <>
-                            <span className="text-lg sm:text-xl font-light text-gray-900">
+                            <span className="text-base sm:text-lg md:text-xl font-light text-gray-900">
                                 {currency}{product.offerPrice}
                             </span>
                             <span className="text-sm text-gray-400 line-through">

@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar/>
       <HeroSlider />
       <div className="bg-white min-h-screen">
-        <div className="px-6 md:px-16 lg:px-32">
+        <div className="px-4 sm:px-6 md:px-16 lg:px-32">
           <HomeProducts />
           <FeaturedProduct />
           <Banner />

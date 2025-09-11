@@ -39,11 +39,11 @@ const FeaturedProduct = () => {
       </div>
 
       {/* Featured Products Grid */}
-      <div className="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full">
         {products.map(({ id, image, title, description, price }) => (
           <div key={id} className="group cursor-pointer" onClick={() => router.push('/all-products')}>
             {/* Image Container */}
-            <div className="relative aspect-[3/4] overflow-hidden bg-white mb-4 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+            <div className="relative aspect-[3/4] min-h-[300px] sm:min-h-[350px] md:min-h-[400px] overflow-hidden bg-white mb-4 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
               <Image
                 src={image}
                 alt={title}
@@ -64,10 +64,10 @@ const FeaturedProduct = () => {
             
             {/* Product Info */}
             <div className="text-center px-2">
-              <h3 className="text-lg sm:text-xl font-serif text-gray-800 mb-2 tracking-wide">{title}</h3>
-              <p className="text-sm text-gray-500 mb-3 line-clamp-2">{description}</p>
-              <p className="text-lg sm:text-xl font-light text-gray-900">₹{price}</p>
-              <button className="mt-4 text-sm text-gray-600 border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-900 transition-all duration-300">
+              <h3 className="text-base sm:text-lg md:text-xl font-serif text-gray-800 mb-1 sm:mb-2 tracking-wide">{title}</h3>
+              <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 line-clamp-2">{description}</p>
+              <p className="text-base sm:text-lg md:text-xl font-light text-gray-900">₹{price}</p>
+              <button className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600 border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-900 transition-all duration-300">
                 View Details
               </button>
             </div>

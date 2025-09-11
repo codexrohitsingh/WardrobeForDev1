@@ -17,7 +17,7 @@ const AllProducts = () => {
                     <h1 className="text-3xl md:text-4xl font-serif text-gray-900">All Products</h1>
                     <div className="w-20 h-0.5 bg-gray-900 rounded-full mt-3"></div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-14 xl:gap-16 mt-12 pb-20 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 mt-8 sm:mt-12 pb-12 sm:pb-16 md:pb-20 w-full">
                     {products.map((product, index) => <ProductCard key={index} product={product} />)}
                 </div>
             </div>

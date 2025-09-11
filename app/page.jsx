@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import HeroSection from "@/components/HeroSection";
+import HeroSlider from "@/components/HeroSlider";
 import HomeProducts from "@/components/HomeProducts";
 import Banner from "@/components/Banner";
 import NewsLetter from "@/components/NewsLetter";
@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <>
       <Navbar/>
-      <div className="bg-cream min-h-screen">
+      <HeroSlider />
+      <div className="bg-dusty-rose min-h-screen">
         <div className="px-6 md:px-16 lg:px-32">
-          <HeroSection />
           <HomeProducts />
           <FeaturedProduct />
           <Banner />

@@ -17,13 +17,16 @@ const ProductCard = ({ product }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-warm-brown to-dark-brown overflow-hidden mb-3 rounded-2xl shadow-lg">
+            <div className="relative w-full aspect-[2/3] min-h-[500px] md:min-h-[550px] lg:min-h-[600px] xl:min-h-[650px] bg-gradient-to-br from-warm-brown to-dark-brown overflow-hidden mb-5 rounded-xl shadow-xl">
                 <Image 
                     src={Array.isArray(product.image) ? product.image[0] : product.image} 
                     alt={product.name}
-                    width={400}
-                    height={533}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    width={1000}
+                    height={1500}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={true}
+                    quality={90}
                 />
                 
                 {/* Wishlist Icon */}
@@ -46,7 +49,7 @@ const ProductCard = ({ product }) => {
                 </button>
 
                 {/* Quick Add to Cart - Shows on hover */}
-                <div className={`absolute bottom-0 left-0 right-0 bg-cream/95 backdrop-blur-sm transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                <div className={`absolute bottom-0 left-0 right-0 bg-dusty-rose/95 backdrop-blur-sm transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
                     <button 
                         className="w-full py-3 text-sm font-light text-gray-900 hover:bg-gray-900 hover:text-cream transition-all duration-300"
                         onClick={(e) => {
@@ -62,22 +65,22 @@ const ProductCard = ({ product }) => {
             </div>
             
             {/* Product Details */}
-            <div className="w-full space-y-1 px-1">
+            <div className="w-full space-y-3 px-4">
                 {/* Product Name */}
-                <h3 className="text-sm font-normal text-gray-900 line-clamp-1">
+                <h3 className="text-xl md:text-2xl font-light text-gray-900 line-clamp-1">
                     {product.name}
                 </h3>
                 
                 {/* Category */}
-                <p className="text-xs font-light text-gray-600 line-clamp-1">
+                <p className="text-base md:text-lg font-light text-gray-600 line-clamp-1">
                     {product.category || 'Formal Wear'}
                 </p>
                 
                 {/* Price */}
-                <div className="flex items-center gap-2 pt-1.5">
+                <div className="flex items-center gap-3 pt-3">
                     {product.offerPrice && product.offerPrice < product.price ? (
                         <>
-                            <span className="text-base font-normal text-gray-900">
+                            <span className="text-xl md:text-2xl font-normal text-gray-900">
                                 {currency}{product.offerPrice}
                             </span>
                             <span className="text-sm font-light text-gray-400 line-through">
@@ -88,7 +91,7 @@ const ProductCard = ({ product }) => {
                             </span>
                         </>
                     ) : (
-                        <span className="text-base font-normal text-gray-900">
+                        <span className="text-xl md:text-2xl font-normal text-gray-900">
                             {currency}{product.price}
                         </span>
                     )}

@@ -40,7 +40,8 @@ const Product = () => {
 
     return productData ? (<>
         <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="min-h-screen bg-dusty-rose">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
             {/* Breadcrumb */}
             <div className="text-xs text-gray-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap">
                 <span className="cursor-pointer hover:text-gray-700" onClick={() => router.push('/')}>Home</span>
@@ -56,7 +57,7 @@ const Product = () => {
                     {productData.image.slice(0, 4).map((image, index) => (
                         <div 
                             key={index} 
-                            className="aspect-[3/4] bg-gray-50 overflow-hidden cursor-pointer rounded-lg sm:rounded-none"
+                            className="aspect-[3/4] bg-white overflow-hidden cursor-pointer rounded-lg sm:rounded-none"
                             onClick={() => {
                                 setSelectedImage(image);
                                 setShowImageModal(true);
@@ -280,6 +281,7 @@ const Product = () => {
                     ))}
                 </div>
             </div>
+          </div>
         </div>
         
         {/* Image Modal */}

@@ -20,7 +20,8 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="min-h-screen bg-dusty-rose">
+        <div className="container mx-auto px-4 py-12 max-w-6xl">
       <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
       
       <div className="flex flex-col md:flex-row gap-12 mb-12">
@@ -181,8 +182,8 @@ const Contact = () => {
           <p className="text-gray-700"><span className="font-medium">Saturday:</span> 10:00 AM - 4:00 PM EST</p>
           <p className="text-gray-700"><span className="font-medium">Sunday:</span> Closed</p>
         </div>
+        </div>
       </div>
-    </div>
       <Footer />
     </>
   )

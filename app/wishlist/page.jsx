@@ -27,7 +27,8 @@ const WishlistPage = () => {
   return (
     <>
       <Navbar />
-      <div className="px-4 sm:px-6 md:px-16 lg:px-32 pt-8 sm:pt-10 md:pt-14 min-h-[70vh]">
+      <div className="min-h-screen bg-dusty-rose">
+        <div className="px-4 sm:px-6 md:px-16 lg:px-32 pt-8 sm:pt-10 md:pt-14 min-h-[70vh]">
         <h1 className="text-2xl sm:text-3xl font-light mb-6 sm:mb-8">My Wishlist</h1>
         
         {wishlistProducts.length === 0 ? (
@@ -107,6 +108,7 @@ const WishlistPage = () => {
             ))}
           </div>
         )}
+        </div>
       </div>
       <Footer />
     </>

@@ -11,7 +11,8 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="min-h-screen bg-dusty-rose">
+        <div className="container mx-auto px-4 py-12 max-w-6xl">
         <h1 className="text-3xl font-bold text-center mb-8">About Wardrobe9to5</h1>
       
       <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
@@ -78,8 +79,8 @@ const AboutUs = () => {
         <Link href="/all-products" className="inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition duration-300">
           Shop Now
         </Link>
+        </div>
       </div>
-    </div>
     <Footer />
     </>
   );

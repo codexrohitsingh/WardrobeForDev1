@@ -31,7 +31,8 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row gap-6 md:gap-10 px-4 sm:px-6 md:px-16 lg:px-32 pt-8 md:pt-14 mb-10 md:mb-20">
+      <div className="min-h-screen bg-dusty-rose">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 px-4 sm:px-6 md:px-16 lg:px-32 pt-8 md:pt-14 mb-10 md:mb-20">
         <div className="flex-1">
           <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-gray-500/30 pb-4 md:pb-6">
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-500">
@@ -115,7 +116,7 @@ const Cart = () => {
                       
                       <td className="flex items-start sm:items-center gap-4 py-2 sm:py-4 md:px-4 px-2">
                         <div className="flex-shrink-0">
-                          <div className="rounded-lg overflow-hidden bg-gray-50">
+                          <div className="rounded-lg overflow-hidden bg-white">
                             <Image
                               src={Array.isArray(product.image) ? product.image[0] : product.image}
                               alt={product.name}
@@ -236,6 +237,7 @@ const Cart = () => {
               <button className="border border-gray-500/50 hover:border-gray-900 hover:text-gray-900 transition rounded p-2 px-4 sm:px-6 text-sm sm:text-base">Apply</button>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </>

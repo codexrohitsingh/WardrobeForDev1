@@ -17,6 +17,9 @@ export default {
         'cream': '#F5F0E8',
         'warm-brown': '#4A453C',
         'dark-brown': '#3D382F',
+        'dusty-rose': '#D4C4C7',
+        'mauve': '#C8B3B8',
+        'soft-pink': '#E0D0D3',
       },
       gridTemplateColumns:{
         'auto': 'repeat(auto-fit, minmax(200px, 1fr))'

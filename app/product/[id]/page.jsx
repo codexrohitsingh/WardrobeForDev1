@@ -108,8 +108,8 @@ const Product = () => {
                     <div className="mb-4 sm:mb-6">
                         <p className="text-xs font-light text-gray-500 mb-3">Color</p>
                         <div className="flex gap-2">
-                            <button className="w-8 h-8 rounded-full bg-black border-2 border-gray-900"></button>
-                            <button className="w-8 h-8 rounded-full bg-gray-200 border-2 border-transparent hover:border-gray-400"></button>
+                            <button className="w-8 h-8 bg-black border-2 border-gray-900"></button>
+                            <button className="w-8 h-8 bg-gray-200 border-2 border-transparent hover:border-gray-400"></button>
                         </div>
                     </div>
 
@@ -281,7 +281,7 @@ const Product = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-7xl mx-auto">
                     {products.slice(0, 3).map((product, index) => (
                         <div key={index} className="group cursor-pointer" onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}>
-                            <div className="relative aspect-[3/4] mb-5 overflow-hidden bg-white rounded border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow duration-500">
+                            <div className="relative aspect-[3/4] mb-5 overflow-hidden bg-white border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow duration-500">
                                 <Image 
                                     src={Array.isArray(product.image) ? product.image[0] : product.image}
                                     alt={product.name}

@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="relative w-full aspect-[2/3] min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] bg-white overflow-hidden mb-6 rounded-lg border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+            <div className="relative w-full aspect-[3/4] min-h-[450px] sm:min-h-[500px] lg:min-h-[550px] xl:min-h-[600px] bg-white overflow-hidden mb-6 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
                 <Image 
                     src={Array.isArray(product.image) ? product.image[0] : product.image} 
                     alt={product.name}

@@ -39,11 +39,11 @@ const FeaturedProduct = () => {
       </div>
 
       {/* Featured Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-14 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14 lg:gap-16 xl:gap-20 w-full">
         {products.map(({ id, image, title, description, price }) => (
           <div key={id} className="group cursor-pointer" onClick={() => router.push('/all-products')}>
             {/* Image Container */}
-            <div className="relative aspect-[2/3] min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] overflow-hidden bg-white mb-6 rounded-lg border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
+            <div className="relative aspect-[3/4] min-h-[450px] sm:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-white mb-6 border border-gray-200 shadow-sm group-hover:shadow-lg transition-shadow duration-500">
               <Image
                 src={image}
                 alt={title}
@@ -76,7 +76,7 @@ const FeaturedProduct = () => {
       </div>
 
       {/* Banner Section */}
-      <div className="mt-20 relative overflow-hidden rounded-lg bg-gradient-to-r from-gray-50 to-gray-100">
+      <div className="mt-24 sm:mt-28 lg:mt-32 relative overflow-hidden bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           {/* Left Content */}
           <div className="p-8 md:p-12 lg:p-16">
@@ -106,7 +106,7 @@ const FeaturedProduct = () => {
                   <Image
                     src={assets.wardrobe_image5}
                     alt="Professional wear"
-                    className="object-cover rounded-lg shadow-lg"
+                    className="object-cover shadow-lg"
                     fill
                   />
                 </div>
@@ -115,7 +115,7 @@ const FeaturedProduct = () => {
                   <Image
                     src={assets.wardrobe_image7}
                     alt="Formal wear"
-                    className="object-cover rounded-lg shadow-lg"
+                    className="object-cover shadow-lg"
                     fill
                   />
                 </div>

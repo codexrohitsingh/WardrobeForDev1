@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
                 </button>
 
                 {/* Quick Add to Cart - Shows on hover */}
-                <div className={`absolute bottom-0 left-0 right-0 bg-dusty-rose/95 backdrop-blur-sm transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                <div className={`absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm transition-all duration-300 ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
                     <button 
                         className="w-full py-3 text-sm font-light text-gray-900 hover:bg-gray-900 hover:text-cream transition-all duration-300"
                         onClick={(e) => {

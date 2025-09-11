@@ -31,7 +31,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-dusty-rose">
+      <div className="min-h-screen bg-white">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 px-4 sm:px-6 md:px-16 lg:px-32 pt-8 md:pt-14 mb-10 md:mb-20">
         <div className="flex-1">
           <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-gray-500/30 pb-4 md:pb-6">

@@ -11,7 +11,7 @@ const AllProducts = () => {
     return (
         <>
             <Navbar />
-            <div className="bg-dusty-rose min-h-screen">
+            <div className="bg-white min-h-screen">
             <div className="flex flex-col items-start px-6 md:px-16 lg:px-24 xl:px-32 max-w-[1600px] mx-auto">
                 <div className="flex flex-col items-center w-full pt-12">
                     <h1 className="text-3xl md:text-4xl font-serif text-gray-900">All Products</h1>

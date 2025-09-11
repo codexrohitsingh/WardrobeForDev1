@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-dusty-rose">
+      <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-12 max-w-6xl">
         <h1 className="text-3xl font-bold text-center mb-8">About Wardrobe9to5</h1>
       

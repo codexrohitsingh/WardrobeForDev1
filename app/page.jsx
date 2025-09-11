@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Navbar/>
       <HeroSlider />
-      <div className="bg-dusty-rose min-h-screen">
+      <div className="bg-white min-h-screen">
         <div className="px-6 md:px-16 lg:px-32">
           <HomeProducts />
           <FeaturedProduct />

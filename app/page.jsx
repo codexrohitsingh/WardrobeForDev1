@@ -7,10 +7,12 @@ import NewsLetter from "@/components/NewsLetter";
 import FeaturedProduct from "@/components/FeaturedProduct";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 const Home = () => {
   return (
     <>
+      <StructuredData />
       <Navbar/>
       <HeroSlider />
       <div className="bg-white min-h-screen">

@@ -12,7 +12,11 @@ export const metadata = {
   description: 'Wardrobe 9 to 5 offers elegant office wear, professional workwear & business attire for modern women. Shop power-dressing staples, formal office clothing & corporate fashion online.',
   keywords: 'wardrobe 9 to 5, wardrobe9to5, office wear, professional clothing, business attire women, workwear, corporate fashion, office outfits, professional dress, work clothes women, business casual, formal office wear, power dressing, executive clothing, career wardrobe',
   icons: {
-    icon: '/favicon.jpg',
+      icon: [
+    { url: '/favicon.ico' }, // default favicon
+    { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+  ],
     shortcut: '/favicon.jpg',
     apple: '/favicon.jpg',
   },

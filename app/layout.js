@@ -32,8 +32,8 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Wardrobe 9 to 5 | Professional Office Wear & Business Attire',
-    description: 'Elegant office wear & professional workwear for modern women. Shop power-dressing staples, business attire & corporate fashion at Wardrobe 9 to 5.',
+    title: 'Wardrobe 9 to 5 | Formal wear and smart casuals for Women',
+    description: 'Wardrobe 9 to 5 offers elegant office wear, professional workwear, business attire & Smart casuals for modern women, that goes 9-5 and beyond. Shop power-dressing staples, formal office clothing ...',
     url: 'https://wardrobe9to5.com',
     siteName: 'Wardrobe 9 to 5',
     type: 'website',
@@ -51,8 +51,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@wardrobe9to5',
     creator: '@wardrobe9to5',
-    title: 'Wardrobe 9 to 5 | Professional Office Wear & Business Attire',
-    description: 'Elegant office wear & professional workwear for modern women. Shop business attire & corporate fashion.',
+    title: 'Wardrobe 9 to 5 | Formal wear and smart casuals for Women',
+    description: 'Wardrobe 9 to 5 offers elegant office wear, professional workwear, business attire & Smart casuals for modern women, that goes 9-5 and beyond. Shop power-dressing staples, formal office clothing ...',
     images: ['https://wardrobe9to5.com/twitter-image.jpg'],
   },
   robots: {

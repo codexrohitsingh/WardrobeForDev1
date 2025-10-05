@@ -9,7 +9,7 @@ const outfit = Outfit({
 
 export const metadata = {
   title: 'Wardrobe 9 to 5 | Professional Office Wear & Business Attire for Women',
-  description: 'Wardrobe 9 to 5 offers elegant office wear, professional workwear & business attire for modern women. Shop power-dressing staples, formal office clothing & corporate fashion online.',
+  description: 'Wardrobe 9 to 5 offers elegant office wear, professional workwear, business attire & Smart casuals for modern women, that goes 9-5 and beyond. Shop power-dressing staples, formal office clothing ...',
   keywords: 'wardrobe 9 to 5, wardrobe9to5, office wear, professional clothing, business attire women, workwear, corporate fashion, office outfits, professional dress, work clothes women, business casual, formal office wear, power dressing, executive clothing, career wardrobe',
   icons: {
       icon: [
